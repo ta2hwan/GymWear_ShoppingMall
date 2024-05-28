@@ -3,22 +3,31 @@ li{ list-style : none }
 a {text-decoration : none}
 
 header{
-    display : flex;
-    justify-content: center;
-    background-color: black;
+    border-bottom : 1px solid black;
+    position : relative;
+    overflow : hidden;
 }
 
 .menu{
-    width : 800px;
+    width: 80%;
+    margin : 0 auto;
     overflow: hidden;
     background-color: #94a9ff;
+    display : flex;
+    float : left;
 }
 
 .menu > li {
-    width : 20%;
+    flex : 1;
     float : left;
     text-align : center;
     line-height : 80px;
+    border-left: 1px solid black; /* 왼쪽 경계 추가 */
+    border-right: 1px solid black; /* 오른쪽 경계 추가 */
+}
+/* 첫 번째 메뉴 왼쪽 경계 제거 */
+.menu> li:first-child{  
+    border-left : none;
 }
 
 .menu a {
@@ -55,14 +64,41 @@ header{
 
 }
 
-
 article{
-   height: 100vh;
-   background-color: beige;
+    height : 100%;
+}
+
+.product-list{    
+    width : 100%;
+    height : auto;
+    display : flex;
+    flex-wrap : wrap;
+    
+    align-items: center;
+    gap : 20px;
+    padding : 20px;
+}
+
+.product-card{
+    width: 250px;
+    height: 330px;
+    background-color : gray;
+}
+
+.product-card img{
+    width: 100%;
+    height : 250px;
+}
+
+.product-contents{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding : 10px;
 }
 
 footer{
-    height: 500px;
-    background-color: darkcyan;
+    height : 300px;
+    background-color: gray;
 }
-

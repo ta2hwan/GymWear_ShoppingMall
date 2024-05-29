@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>market</title>
   <link href="index.css" rel="stylesheet" />
 </head>
+
 <body>
   <header>
     <ul class="menu">
@@ -53,44 +55,133 @@
       </li>
     </ul>
     <div id="cart">
-      <img src="img/cart.png" alt="장바구니">
+      <a href="#">
+        <img src="img/cart.png" alt="장바구니">
+      </a>
     </div>
   </header>
 
   <article>
     <div class="left-column">
-      <div class="small-image">
-        <img src="img/sleeveless1.jpg" alt="상품 사진">
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless1.jpg" alt=" 작은 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
       </div>
-      <div class="small-image">
-        <img src="img/sleeveless1.jpg" alt="상품 사진">
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless1.jpg" alt="작은 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
       </div>
-      <div class="small-image">
-        <img src="img/sleeveless1.jpg" alt="상품 사진">
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless1.jpg" alt="작은 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
       </div>
-      <div class="small-image">
-        <img src="img/sleeveless2.jpg" alt="상품 사진">
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless2.jpg" alt="작은 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
       </div>
     </div>
     <div class="right-column">
-      <div class="large-image">
-        <img src="img/sleeveless2.jpg" alt="상품 사진">
+      <div class="largeProduct-card">
+        <a href="#">
+          <img src="img/sleeveless2.jpg" alt="큰 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
       </div>
     </div>
   </article>
 
   <footer>
-    <div class = "lower">
-      <img src = "img/belt1.jpg" alt = "상품 사진">
-    </div>
-    <div class = "lower">
-      <img src = "img/strab1.jpg" alt = "상품 사진">
-    </div>
-    <div class = "lower">
-      <img src = "img/wristwrap.jpeg" alt = "상품 사진">
-    </div>
-  </footer>
+    <div class="footer-column">
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless2.jpg" alt="큰 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
+      </div>
 
-  <script src = "index.js"></script>
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless2.jpg" alt="큰 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
+      </div>
+      <div class="product-card">
+        <a href="#">
+          <img src="img/sleeveless2.jpg" alt="큰 사진">
+        </a>
+        <div class="product-content">
+          <span class="product-name">민소매1</span>
+          <span class="product-price">3000</span>
+        </div>
+      </div>
+    </div>
+
+  </footer>
 </body>
+<script>
+  let products = [
+    {
+      name: "벨트1",
+      price: 1000000,
+      seller: "장태환",
+      imageUrl: "img/belt1.jpg"
+    },
+    {
+      name: "민소매1",
+      price: 1000000,
+      seller: "장태환",
+      imageUrl: "img/sleeveless1.jpg"
+    },
+    {
+      name: "민소매2",
+      price: 1000000,
+      seller: "장태환",
+      imageUrl: "img/sleeveless2.jpg"
+    },
+    {
+      name: "스트랩1",
+      price: 1000000,
+      seller: "장태환",
+      imageUrl: "img/strab1.jpg"
+    },
+    {
+      name: "손목보호대",
+      price: 1000000,
+      seller: "장태환",
+      imageUrl: "img/wristwrap.jpg"
+    }
+  ]
+
+
+</script>
+
 </html>

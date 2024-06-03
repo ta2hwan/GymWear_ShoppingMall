@@ -17,7 +17,7 @@ a {
 }
 
 header {
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid rgb(170, 170, 170);
     position: relative;
     overflow: hidden;
 }
@@ -36,8 +36,8 @@ header {
     float: left;
     text-align: center;
     line-height: 80px;
-    border-left: 1px solid black;
-    border-right: 1px solid black;
+    border-left: 1px solid rgb(170, 170, 170);
+    border-right: 1px solid rgb(170, 170, 170);
 }
 
 .menu>li:first-child {
@@ -51,8 +51,7 @@ header {
 #cart {
     position: absolute;
     right: 10px;
-    border: 1px solid black;
-    background-color: #fff;
+    border: 1px solid rgb(170, 170, 170);
     box-sizing: border-box;
 }
 

@@ -1,19 +1,17 @@
-class Products {
-    async getProducts(){
-    try {
-     let result = await fetch("products.json");
-     let data = await result.json();
- 
-     let products = data.items;
-     products = products.map(item =>{
-         const {title,price} = item.fields;
-         const {id} = item.sys;
-         const image = item.fields.image.fields.file.url;
-         return {title,price,id,image};
-     })
-     return products;
-    } catch (error) {
-        console.log(error);
-     }
-   }
- }
+document.addEventListener('DOMContentLoaded', () => {
+  const addToCartButtons = document.querySelectorAll('.add-to-cart');
+
+  addToCartButtons.forEach(button => {
+      button.addEventListener('click', () => {
+          const name = button.getAttribute('data-name');
+          const price = parseInt(button.getAttribute('data-price'));
+          const image = button.getAttribute('data-image');
+
+          const cartItem = { name, price, image };
+          let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+          cartItems.push(cartItem);
+          localStorage.setItem('cartItems', JSON.stringify(cartItems));
+          alert('장바구니에 추가되었습니다.');
+      });
+  }); 
+});

@@ -1,27 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>장바구니</title>
-  <link rel="stylesheet" href="styles.css">
+  <title>Cart</title>
+  <link href="cart.css" rel="stylesheet" />
+  <script src="./cart.js" defer></script>
 </head>
 <body>
-  <header>
-    <!-- 헤더 영역 -->
-  </header>
-
-  <main>
-    <h1>장바구니</h1>
-    <div id="cart-items">
-      <!-- 장바구니 항목이 여기에 동적으로 추가될 것입니다. -->
-    </div>
-  </main>
-
-  <footer>
-    <!-- 푸터 영역 -->
-  </footer>
-
-  <script src="script.js"></script>
+    <ul id="cart-items">
+      <!-- 장바구니 항목이 여기에 표시됩니다 -->
+    </ul>
+    <p>총 가격: <span id="total-price">0</span>원</p>
 </body>
 </html>

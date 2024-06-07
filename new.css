@@ -1,31 +1,15 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #CCCCCC;
+    background-color: #f4f4f9;
     color: #333;
     line-height: 1.6;
-}
-
-li {
-    list-style: none;
-}
-
-a {
-    text-decoration: none;
-    color: inherit;
 }
 
 header {
     border-bottom: 1px solid rgb(170, 170, 170);
     background-color: #ffffff50;
-    position: relative;
-    overflow: hidden;
     padding: 10px 0;
+    position: relative;
 }
 
 .menu {
@@ -35,10 +19,9 @@ header {
     justify-content: space-around;
 }
 
-.menu>li {
+.menu > li {
     position: relative;
     text-align: center;
-    line-height: 40px;
 }
 
 .menu a {
@@ -46,6 +29,7 @@ header {
     font-weight: 500;
     padding: 10px 20px;
     display: block;
+    transition: background-color 0.3s, border-radius 0.3s;
 }
 
 .menu a:hover {
@@ -58,6 +42,15 @@ header {
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    padding: 10px 20px;
+    background-color: #555555;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s, border-radius 0.3s;
+}
+
+#cart:hover {
+    background-color: #444444;
 }
 
 #cart img {
@@ -65,36 +58,20 @@ header {
     height: auto;
 }
 
-#cart:hover {
-    display: block;
-    background-color: #555555;
-}
-
 article {
     display: flex;
     padding: 20px;
-    gap: 20px;
+    justify-content: center;
 }
 
-.left-column,
-.right-column {
-    flex: 1;
-}
-
-.left-column {
+.product-gallery {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     gap: 20px;
 }
 
-.right-column {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-}
-
-.product-card,
-.largeProduct-card {
+.product-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -102,53 +79,43 @@ article {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    width: calc(50% - 10px);
+    width: 180px;
 }
 
-.product-card:hover,
-.largeProduct-card:hover {
+.product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-.largeProduct-card {
-    width: 100%;
-    /* 큰 카드가 오른쪽 전체를 차지하도록 설정 */
-}
-
-.product-card img,
-.largeProduct-card img {
+.product-card img {
     width: 100%;
     object-fit: cover;
 }
 
 .product-content {
-    padding: 30px;
+    padding: 10px;
 }
 
 .product-content .product-name {
-    display: block;
     font-weight: 600;
-    font-size-adjust: auto;
-    white-space: nowrap;
     margin: 10px 0;
     color: #333;
 }
 
 .product-content .product-price {
-    display: block;
     font-weight: 600;
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: #3c94e7;
 }
 
 .add-to-cart {
     background-color: #e73c3c;
-    color: #ffffff;
+    color: #fff;
     border: none;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .add-to-cart:hover {
@@ -163,7 +130,6 @@ footer {
 
 .footer-column {
     display: flex;
-    gap: 20px;
     justify-content: center;
-    flex-wrap: wrap;
+    gap: 20px;
 }

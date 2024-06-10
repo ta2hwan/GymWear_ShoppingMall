@@ -2,9 +2,12 @@
 <html>
 
 <head>
-    <title>New Products</title>
+    <title>New</title>
     <link href="index.css" rel="stylesheet" />
     <link href="new.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./script.js"></script>
 </head>
 
 <body>
@@ -13,101 +16,104 @@
             <li>
                 <a href="#">NEW</a>
                 <ul class="submenu">
-                    <!-- Submenu items can be added here -->
                 </ul>
             </li>
             <li>
                 <a href="#">MEN</a>
                 <ul class="submenu">
-                    <!-- Submenu items can be added here -->
                 </ul>
             </li>
             <li>
                 <a href="#">WOMEN</a>
                 <ul class="submenu">
-                    <!-- Submenu items can be added here -->
                 </ul>
             </li>
             <li>
                 <a href="#">REVIEW</a>
                 <ul class="submenu">
-                    <!-- Submenu items can be added here -->
                 </ul>
             </li>
             <li>
                 <a href="#">GEAR</a>
                 <ul class="submenu">
-                    <!-- Submenu items can be added here -->
                 </ul>
             </li>
         </ul>
-        <div id="cart">
-            <a href="cart.html">
+        <div id="icons">
+            <div id="home">
+              <a href="index.html">
+                <img src="img/home.png" alt="홈으로 이동">
+              </a>
+            </div>
+            <div id="cart">
+              <a href="cart.html">
                 <img src="img/cart.png" alt="장바구니">
-            </a>
-        </div>
+              </a>
+            </div>
+          </div>
     </header>
 
     <article>
-        <div class="product-gallery">
+        <div class="products">
             <div class="product-card">
                 <a href="#">
-                    <img src="img/product1.jpg" alt="Product 1">
+                    <img src="img/t-shirt3.jpg" alt="new">
                 </a>
                 <div class="product-content">
-                    <span class="product-name">Product 1</span>
-                    <span class="product-price">$30.00</span>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="product-name">VQ 머슬핏 티셔츠</span>
+                    <span class="product-price">23,000</span>
+                    <button class="add-to-cart" data-name="VQ 머슬핏 티셔츠" data-price="23000"
+                        data-image="img/t-shirt3.jpg">장바구니에 추가</button>
                 </div>
             </div>
             <div class="product-card">
                 <a href="#">
-                    <img src="img/product2.jpg" alt="Product 2">
+                    <img src="img\shorts1.jpg" alt="new">
                 </a>
                 <div class="product-content">
-                    <span class="product-name">Product 2</span>
-                    <span class="product-price">$45.00</span>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="product-name">스웨커 레인저 숏츠</span>
+                    <span class="product-price">19,000</span>
+                    <button class="add-to-cart" data-name="스웨커 레인저 숏츠" data-price="19000"
+                        data-image="img/shorts1.jpg">장바구니에 추가</button>
                 </div>
             </div>
             <div class="product-card">
                 <a href="#">
-                    <img src="img/product3.jpg" alt="Product 3">
+                    <img src="img/belt2.jpg" alt="new">
                 </a>
                 <div class="product-content">
-                    <span class="product-name">Product 3</span>
-                    <span class="product-price">$25.00</span>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="product-name">크리올로지 벨트</span>
+                    <span class="product-price">152,000</span>
+                    <button class="add-to-cart" data-name="크리올로지 벨트" data-price="152000"
+                        data-image="img/belt2.jpg">장바구니에 추가</button>
                 </div>
+
             </div>
             <div class="product-card">
                 <a href="#">
-                    <img src="img/product4.jpg" alt="Product 4">
+                    <img src="img/strab2.jpg" alt="new">
                 </a>
                 <div class="product-content">
-                    <span class="product-name">Product 4</span>
-                    <span class="product-price">$60.00</span>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="product-name">베르사 그립</span>
+                    <span class="product-price">123,000</span>
+                    <button class="add-to-cart" data-name="베르사 그립" data-price="123000" data-image="img/strab2.jpg">장바구니에
+                        추가</button>
                 </div>
+
             </div>
             <div class="product-card">
                 <a href="#">
-                    <img src="img/product5.jpg" alt="Product 5">
+                    <img src="img/wristwrap2.jpg" alt="new">
                 </a>
                 <div class="product-content">
-                    <span class="product-name">Product 5</span>
-                    <span class="product-price">$35.00</span>
-                    <button class="add-to-cart">Add to Cart</button>
+                    <span class="product-name">WSF 리스트랩</span>
+                    <span class="product-price">15,000</span>
+                    <button class="add-to-cart" data-name="WSF 리스트랩" data-price="15000"
+                        data-image="img/wristwrap2.jpg">장바구니에 추가</button>
                 </div>
             </div>
         </div>
     </article>
-
-    <footer>
-        <div class="footer-column">
-            <!-- Footer content can go here -->
-        </div>
-    </footer>
 </body>
 
 </html>

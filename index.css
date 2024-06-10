@@ -53,22 +53,26 @@ header {
     border-radius: 5px;
 }
 
-#cart {
+#icons {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
 }
 
-#cart img {
+#icons img {
     width: 40px;
     height: auto;
+    cursor: pointer;
 }
 
-#cart:hover {
-    display: block;
+#icons img:hover {
     background-color: #555555;
 }
+
+
 
 article {
     display: flex;
@@ -113,7 +117,6 @@ article {
 
 .largeProduct-card {
     width: 100%;
-    /* 큰 카드가 오른쪽 전체를 차지하도록 설정 */
 }
 
 .product-card img,

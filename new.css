@@ -1,6 +1,6 @@
 body {
     font-family: 'Quicksand', sans-serif;
-    background-color: #f4f4f9;
+    background-color: #CCCCCC;
     color: #333;
     line-height: 1.6;
 }
@@ -8,8 +8,9 @@ body {
 header {
     border-bottom: 1px solid rgb(170, 170, 170);
     background-color: #ffffff50;
-    padding: 10px 0;
     position: relative;
+    overflow: hidden;
+    padding: 10px 0;
 }
 
 .menu {
@@ -22,6 +23,7 @@ header {
 .menu > li {
     position: relative;
     text-align: center;
+    line-height: 40px;
 }
 
 .menu a {
@@ -29,7 +31,6 @@ header {
     font-weight: 500;
     padding: 10px 20px;
     display: block;
-    transition: background-color 0.3s, border-radius 0.3s;
 }
 
 .menu a:hover {
@@ -37,25 +38,23 @@ header {
     border-radius: 5px;
 }
 
-#cart {
+#icons {
     position: absolute;
     right: 20px;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px 20px;
-    background-color: #555555;
-    border-radius: 5px;
-    display: inline-block;
-    transition: background-color 0.3s, border-radius 0.3s;
+    display: flex;
+    gap: 10px;
 }
 
-#cart:hover {
-    background-color: #444444;
-}
-
-#cart img {
+#icons img {
     width: 40px;
     height: auto;
+    cursor: pointer;
+}
+
+#icons img:hover {
+    background-color: #555555;
 }
 
 article {
@@ -64,7 +63,7 @@ article {
     justify-content: center;
 }
 
-.product-gallery {
+.products {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
@@ -120,16 +119,4 @@ article {
 
 .add-to-cart:hover {
     background-color: #e75b3c;
-}
-
-footer {
-    padding: 20px;
-    background-color: #5555553d;
-    color: #fff;
-}
-
-.footer-column {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
 }

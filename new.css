@@ -1,8 +1,23 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: 'Quicksand', sans-serif;
     background-color: #CCCCCC;
     color: #333;
     line-height: 1.6;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
 }
 
 header {
@@ -61,13 +76,16 @@ article {
     display: flex;
     padding: 20px;
     justify-content: center;
+    width: 100%;
 }
 
 .products {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: flex-start;
     gap: 20px;
+    width: 100%;
+    max-width: 1200px;
 }
 
 .product-card {
@@ -78,7 +96,8 @@ article {
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
-    width: 180px;
+    width: calc(20% - 20px);
+    height: 500px;
 }
 
 .product-card:hover {
@@ -88,22 +107,27 @@ article {
 
 .product-card img {
     width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
 .product-content {
-    padding: 10px;
+    padding: 30px;
 }
 
 .product-content .product-name {
+    display: block;
     font-weight: 600;
+    font-size-adjust: auto;
+    white-space: nowrap;
     margin: 10px 0;
     color: #333;
 }
 
 .product-content .product-price {
+    display: block;
     font-weight: 600;
-    font-size: 1.2em;
+    font-size: 1.5em;
     color: #3c94e7;
 }
 
@@ -114,7 +138,6 @@ article {
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s;
 }
 
 .add-to-cart:hover {

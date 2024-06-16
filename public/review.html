@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Review</title>
+    <link href="new.css" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="./script.js"></script>
+</head>
+
+<body>
+    <header>
+        <ul class="menu">
+            <li>
+                <a href="new.html">NEW</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li>
+                <a href="men.html">MEN</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li>
+                <a href="women.html">WOMEN</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li>
+                <a href="review.html">REVIEW</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+            <li>
+                <a href="gear.html">GEAR</a>
+                <ul class="submenu">
+                </ul>
+            </li>
+        </ul>
+        <div id="icons">
+            <div id="home">
+                <a href="/">
+                    <img src="img/home.png" alt="홈으로 이동">
+                </a>
+            </div>
+            <div id="cart">
+                <a href="cart.html">
+                    <img src="img/cart.png" alt="장바구니">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <article>
+        <h1>Product Reviews</h1>
+        <div class="products">
+            <div class="product-card">
+                <a href="#">
+                    <img src="img/t-shirt3.jpg" alt="new">
+                </a>
+                <div class="product-content">
+                    <span class="product-name">VQ 머슬핏 티셔츠</span>
+                    <span class="product-price">23,000</span>
+                </div>
+            </div>
+            <div class="review">
+                <p>
+                    이 티셔츠는 정말 편안하고 스타일리시합니다. 운동할 때도 편하게 입을 수 있고, 일상복으로도 손색이 없습니다.
+                    재질이 부드럽고, 신축성이 좋아서 활동하기 좋습니다.
+                </p>
+                <p><strong>별점: ★★★☆☆</strong></p>
+            </div>
+        
+            <div class="product-card">
+                <a href="#">
+                    <img src="img/shorts1.jpg" alt="new">
+                </a>
+                <div class="product-content">
+                    <span class="product-name">스웨커 레인저 숏츠</span>
+                    <span class="product-price">19,000</span>
+                </div>
+            </div>
+            <div class="review">
+                <p>
+                        이 숏츠는 가볍고 통기성이 좋아서 여름철에 특히 좋습니다. 디자인도 멋지고, 여러 번 세탁해도 색이 바래지 않습니다.
+                        다만 사이즈가 조금 작게 나와서 한 사이즈 크게 주문하는 게 좋을 것 같습니다.
+                </p>
+                <p><strong>별점: ★★★★☆</strong></p>
+            </div>
+        </div>
+
+        <h2>Submit Your Review</h2>
+        <form id="review-form">
+            <label for="product-name">Product Name:</label>
+            <input type="text" id="product-name" name="product-name" required>
+            <br>
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" name="review-text" required></textarea>
+            <br>
+            <label for="review-rating">Rating:</label>
+            <select id="review-rating" name="review-rating" required>
+                <option value="5">★★★★★</option>
+                <option value="4">★★★★☆</option>
+                <option value="3">★★★☆☆</option>
+                <option value="2">★★☆☆☆</option>
+                <option value="1">★☆☆☆☆</option>
+            </select>
+            <br>
+            <button type="submit">Submit Review</button>
+        </form>
+    </article>
+
+    <script>
+        document.getElementById('review-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            const productName = document.getElementById('product-name').value;
+            const reviewText = document.getElementById('review-text').value;
+            const reviewRating = document.getElementById('review-rating').value;
+            
+            const reviewSection = document.createElement('div');
+            reviewSection.classList.add('review');
+            
+            const reviewHTML = `
+                <div class="product-card">
+                    <div class="product-content">
+                        <span class="product-name">${productName}</span>
+                    </div>
+                </div>
+                <p>${reviewText}</p>
+                <p><strong>별점: ${'★'.repeat(reviewRating)}${'☆'.repeat(5 - reviewRating)}</strong></p>
+                <hr>
+            `;
+            
+            reviewSection.innerHTML = reviewHTML;
+            document.querySelector('.products').appendChild(reviewSection);
+            
+            document.getElementById('review-form').reset();
+        });
+    </script>
+</body>
+
+</html>

@@ -17,16 +17,16 @@ const mongoDBUrl = 'mongodb+srv://taehwan011:tYESpuMTHdqzEM2K@cluster0.xbeufo1.m
 mongoose.connect(mongoDBUrl);
 
 const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
+
 db.once('open', () => {
-  console.log('Database connected!');
+  console.log('DB 연결!');
 });
 
-// 스키마 정의
+
 const cartItemSchema = new mongoose.Schema({
   name: String,
   price: Number,
-  image: String
+  image: String,
 });
 
 const CartItem = mongoose.model('CartItem', cartItemSchema);
@@ -37,10 +37,10 @@ app.post('/add-to-cart', async (req, res) => {
     const { name, price, image } = req.body;
     const newItem = new CartItem({ name, price, image });
     await newItem.save();
-    res.send('Item added to cart!');
+    res.send('상품을 장바구니에 담았습니다!');
   } catch (err) {
-    console.error('Error adding item to cart:', err);
-    res.status(500).send('Error adding item to cart');
+    console.error('상품을 장바구니에 추가할 수 없습니다.:', err);
+    res.status(500).send('상품을 장바구니에 담을 수 없습니다.');
   }
 });
 
@@ -50,8 +50,8 @@ app.get('/get-cart-items', async (req, res) => {
     const items = await CartItem.find();
     res.json(items);
   } catch (err) {
-    console.error('Error fetching cart items:', err);
-    res.status(500).send('Error fetching cart items');
+    console.error('장바구니를 불러올 수 없습니다.:', err);
+    res.status(500).send('장바구니를 불러올 수 없습니다.');
   }
 });
 
@@ -60,10 +60,10 @@ app.delete('/remove-from-cart/:id', async (req, res) => {
   try {
     const itemId = req.params.id;
     await CartItem.findByIdAndDelete(itemId);
-    res.json({ message: 'Item removed from cart' });
+    res.json({ message: '상품이 장바구니에서 삭제되었습니다!' });
   } catch (err) {
-    console.error('Error removing item from cart:', err);
-    res.status(500).send('Error removing item from cart');
+    console.error('상품을 장바구니에서 삭제할 수 없습니다.:', err);
+    res.status(500).send('상품을 장바구니에서 삭제할 수 없습니다.');
   }
 });
 

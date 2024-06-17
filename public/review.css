@@ -35,7 +35,7 @@ header {
     justify-content: space-around;
 }
 
-.menu>li {
+.menu > li {
     position: relative;
     text-align: center;
     line-height: 40px;
@@ -72,66 +72,55 @@ header {
     background-color: #555555;
 }
 
+
 article {
     display: flex;
     padding: 20px;
-    gap: 20px;
-}
-
-.left-column,
-.right-column {
-    flex: 1;
-}
-
-.left-column {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-
-.right-column {
-    display: flex;
     justify-content: center;
-    align-items: flex-start;
+    width: 100%;
+}
+.products {
+    display: flex;
+    flex-direction: column; /* 세로 방향으로 배치 */
+    gap: 20px; /* 각 상품-리뷰 쌍 간의 간격 설정 */
+    width: 100%;
+    max-width: 1200px;
 }
 
-.product-card,
-.largeProduct-card {
+.product-review {
+    display: flex;
+    flex-direction: row; /* 상품과 리뷰를 수평 방향으로 배치 */
+    gap: 20px; /* 상품과 리뷰 간의 간격 설정 */
+    width: 100%;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.product-card {
     background: #fff;
     border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
     text-align: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: calc(50% - 10px);
+    width: 275px; /* 고정된 너비로 설정 */
 }
 
-.product-card:hover,
-.largeProduct-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-}
-
-.largeProduct-card {
+.product-card img {
     width: 100%;
-}
-
-.product-card img,
-.largeProduct-card img {
-    width: 100%;
+    height: auto;
     object-fit: cover;
 }
 
 .product-content {
-    padding: 30px;
+    padding: 10px;
 }
 
 .product-content .product-name {
     display: block;
     font-weight: 600;
-    font-size-adjust: auto;
-    white-space: nowrap;
     margin: 10px 0;
     color: #333;
 }
@@ -143,28 +132,17 @@ article {
     color: #3c94e7;
 }
 
-.add-to-cart {
-    background-color: #e73c3c;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+.review {
+    background: #f9f9f9;
+    border: 1px dotted black;
+    border-radius: 8px;
+    padding: 10px;
+    width: 100%;
 }
 
-.add-to-cart:hover {
-    background-color: #e75b3c;
+.review .text {
+    overflow: hidden; /* 스크롤바 숨기기 */
+    height: 300px;
+    text-overflow: ellipsis; /* 넘칠 때 생략 표시 추가 */
 }
 
-footer {
-    padding: 20px;
-    background-color: #5555553d;
-    color: #fff;
-}
-
-.footer-column {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-}

@@ -40,10 +40,42 @@
 }
 
 #cart-items .remove-from-cart {
-    background-color: #ff4c4c;
+    background-color: #e73c3c;
     color: white;
     border: none;
     padding: 2px 5px;
     cursor: pointer;
     margin-top: 10px;
+}
+
+#cart-items .remove-from-cart:hover {
+    background-color: #e75b3c;
+}
+
+.checkout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.total-price {
+    font-size: 1.2em;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+#checkout-button {
+    background-color: #e73c3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+#checkout-button:hover {
+    background-color: #e75b3c;
 }

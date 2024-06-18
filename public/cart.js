@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const totalPriceElement = document.querySelector('.total-price span');
                 let totalPrice = 0;
 
-                cartItemsElement.innerHTML = ''; 
+                cartItemsElement.innerHTML = '';
 
                 items.forEach(item => {
                     if (!item.purchased) {  // 구매되지 않은 상품 표시
@@ -65,7 +65,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const purchaseConfirm = window.confirm("정말로 구매하시겠습니까?");
 
             if (purchaseConfirm) {
-                fetch('/checkout', { method: 'POST' })
+                fetch('/checkout', {
+                    method: 'POST'
+                })
                     .then(response => {
                         return response.json();
                     })

@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', () => {
       const name = button.getAttribute('data-name');
       const price = parseInt(button.getAttribute('data-price'));
       const image = button.getAttribute('data-image');
-      
+
       // 사용자에게 확인 메시지 표시
       const addConfirm = confirm('장바구니에 상품을 추가하시겠습니까?');
-      
+
       if (addConfirm) {
         const cartItem = { name, price, image };
 
@@ -20,16 +20,12 @@ document.addEventListener('DOMContentLoaded', () => {
           },
           body: JSON.stringify(cartItem)
         })
-        .then(response => {
-          return response.text();
-        })
-        .then(data => {
-          console.log('Success:', data);
-          alert(data);
-        })
-        .catch(error => {
-          console.error('Error:', error);
-        });
+          .then(response => {
+            return response.text();
+          })
+          .then(data => {
+            alert(data);
+          })
       }
     });
   });

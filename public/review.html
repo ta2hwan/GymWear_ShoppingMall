@@ -6,7 +6,7 @@
     <link href="review.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <script src="./script.js"></script>
+    <script src="review.js"></script>
     <style>
 
     </style>
@@ -56,45 +56,32 @@
     </header>
 
     <article>
-        <div class="produts">
-            <div class="product-review">
-                <div class="product-card">
-                    <a href="#">
-                        <img src="img/t-shirt3.jpg" alt="review">
-                    </a>
-                    <div class="product-content">
-                        <span class="product-name">VQ 머슬핏 티셔츠</span>
-                        <span class="product-price">23,000</span>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="text">
-                        이 티셔츠는 정말 편안하고 스타일리시합니다. 운동할 때도 편하게 입을 수 있고, 일상복으로도 손색이 없습니다. 재질이 부드럽고, 신축성이 좋아서 활동하기 좋습니다.
-                    </div>
-                    <hr>
-                    <p><strong>별점: ★★★☆☆</strong></p>
-                </div>
+        <main>
+            <h1>소중한 리뷰</h1>
+            <form id="review-form">
+                <label for="product">구매한 상품:</label>
+                <select id="product" name="product"></select>
+    
+                <label for="rating">별점:</label>
+                <select id="rating" name="rating">
+                    <option value="1">★☆☆☆☆</option>
+                    <option value="2">★★☆☆☆</option>
+                    <option value="3">★★★☆☆</option>
+                    <option value="4">★★★★☆</option>
+                    <option value="5">★★★★★</option>
+                </select>
+    
+                <label for="review-text">리뷰:</label>
+                <textarea id="review-text" name="review-text"></textarea>
+    
+                <button type="submit" class = "submit-button">리뷰 작성</button>
+            </form>
+    
+            <div id="reviews-container">
+                <!--리뷰 표시-->
             </div>
-
-            <div class="product-review">    
-                <div class="product-card">
-                    <a href="#">
-                        <img src="img/shorts1.jpg" alt="review">
-                    </a>
-                    <div class="product-content">
-                        <span class="product-name">스웨커 레인저 숏츠</span>
-                        <span class="product-price">19,000</span>
-                    </div>
-                </div>
-                <div class="review">
-                    <div class="text">
-                        이 숏츠는 가볍고 통기성이 좋아서 여름철에 특히 좋습니다. 디자인도 멋지고, 여러 번 세탁해도 색이 바래지 않습니다. 다만 사이즈가 조금 작게 나와서 한 사이즈 크게
-                        주문하는 게 좋을 것 같습니다. </div>
-                    <hr>
-                    <p><strong>별점: ★★★★☆</strong></p>
-                </div>
-            </div>
-        </div>
+        </main>
 </body>
+
 
 </html>

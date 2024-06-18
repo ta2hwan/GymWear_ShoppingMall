@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
       const image = button.getAttribute('data-image');
       
       // 사용자에게 확인 메시지 표시
-      const confirmAdd = confirm('장바구니에 상품을 추가하시겠습니까?');
+      const addConfirm = confirm('장바구니에 상품을 추가하시겠습니까?');
       
-      if (confirmAdd) {
+      if (addConfirm) {
         const cartItem = { name, price, image };
 
         fetch('/add-to-cart', {
@@ -21,9 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
           body: JSON.stringify(cartItem)
         })
         .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
           return response.text();
         })
         .then(data => {

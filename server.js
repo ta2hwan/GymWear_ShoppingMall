@@ -36,8 +36,6 @@ const save_in_file = () => {
         fs.writeFile('cartItems.json', data, (err) => {
           if (err) {
             console.error('파일 저장 중 오류 발생:', err);
-          } else {
-            console.log('파일이 업데이트되었습니다.');
           }
         });
       })
@@ -52,7 +50,7 @@ const db = mongoose.connection;
 db.once('open', () => {
   console.log('DB 연결!');
   initializeDB();
-  startFileSync();
+  save_in_file();
 });
 
 const cartItemSchema = new mongoose.Schema({

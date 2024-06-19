@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+const fs = require('fs');
 require('dotenv').config();
 
 const app = express();
@@ -14,7 +15,7 @@ app.use(cors());
 // MongoDB Atlas 연결 URL
 const mongoDBUrl = process.env.MONGODB_URL;
 
-
+//데이터베이스 초기화
 const initializeDB = async () => {
   try {
     await CartItem.deleteMany({});
@@ -24,14 +25,34 @@ const initializeDB = async () => {
   }
 };
 
+//5초마다 cartItems.json에 DB 저장
+const save_in_file = () => {
+  const interval = 5000; // 5초마다 파일을 동기화
+
+  setInterval(() => {
+    CartItem.find()
+      .then(items => {
+        const data = JSON.stringify(items, null, 2);
+        fs.writeFile('cartItems.json', data, (err) => {
+          if (err) {
+            console.error('파일 저장 중 오류 발생:', err);
+          } else {
+            console.log('파일이 업데이트되었습니다.');
+          }
+        });
+      })
+  }, interval);
+};
+
 // Mongoose를 사용하여 MongoDB에 연결
 mongoose.connect(mongoDBUrl);
 
 const db = mongoose.connection;
 
 db.once('open', () => {
-  initializeDB();
   console.log('DB 연결!');
+  initializeDB();
+  startFileSync();
 });
 
 const cartItemSchema = new mongoose.Schema({

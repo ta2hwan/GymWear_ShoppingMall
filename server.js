@@ -100,15 +100,6 @@ app.get('/get-purchased-items', (req, res) => {
     .catch(err => console.error('구매한 상품을 불러올 수 없습니다.:', err));
 });
 
-// 리뷰 추가 요청 처리
-app.post('/add-review', (req, res) => {
-  const { cartItemId, reviewText, rating } = req.body;
-  const newReview = new Review({ cartItemId, reviewText, rating });
-  newReview.save()
-    .then(() => res.send('리뷰가 추가되었습니다!'))
-    .catch(err => console.error('리뷰를 추가할 수 없습니다.:', err));
-});
-
 // 정적 파일 제공
 app.use(express.static(path.join(__dirname, 'public')));
 

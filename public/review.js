@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/get-purchased-items')
       .then(response => response.json())
       .then(items => {
-        purchasedItems = items;  // 나중에 이미지 URL을 찾기 위해 저장
+        purchasedItems = items; 
         const productSelect = document.getElementById('product');
         items.forEach(item => {
           const option = document.createElement('option');

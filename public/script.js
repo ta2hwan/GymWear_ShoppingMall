@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (addConfirm) {
         const cartItem = { name, price, image };
-
+        //서버에 요청
         fetch('/add-to-cart', {
           method: 'POST',
           headers: {

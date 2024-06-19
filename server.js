@@ -1,16 +1,18 @@
-// npm install expess mongoose body-parser cors
+// npm install expess mongoose body-parser cors dotenv
+
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const path = require('path');
 const cors = require('cors');
+require('dotenv').config();
 
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
 
 // MongoDB Atlas 연결 URL
-const mongoDBUrl = 'mongodb+srv://taehwan011:tYESpuMTHdqzEM2K@cluster0.xbeufo1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const mongoDBUrl = process.env.MONGODB_URL;
 
 
 const initializeDB = async () => {

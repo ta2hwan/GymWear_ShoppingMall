@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 cartItemsElement.innerHTML = '';
 
                 items.forEach(item => {
-                    if (!item.purchased) {  // 구매되지 않은 상품 표시
+                    if (!item.purchased) {  // 구매하지 않은 상품 표시
                         const productCard = document.createElement('div');
                         productCard.classList.add('product-card');
                         productCard.innerHTML = `

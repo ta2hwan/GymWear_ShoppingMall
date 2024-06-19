@@ -18,9 +18,9 @@ const mongoDBUrl = process.env.MONGODB_URL;
 const initializeDB = async () => {
   try {
     await CartItem.deleteMany({});
-    console.log('장바구니 아이템 초기화 완료');
+    console.log('초기화 완료');
   } catch (err) {
-    console.error('장바구니 아이템 초기화 중 오류 발생:', err);
+    console.error('초기화 중 오류 발생:', err);
   }
 };
 
